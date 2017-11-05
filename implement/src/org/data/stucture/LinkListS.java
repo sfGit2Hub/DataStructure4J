@@ -13,13 +13,13 @@ public class LinkListS<T> {
     }
 
     public LinkListS(T[] elements) {
-        if (elements == null || elements.length == 0) {
+        if (elements == null) {
             throw new IllegalArgumentException("Error empty elements");
         }
         this.nodes = new Node[elements.length];
         this.size = elements.length;
         for (int i=0; i<elements.length; i++) {
-            this.nodes[i].setElement(elements[i]).setIndex(i);
+            this.nodes[i] = new Node<T>(elements[i]).setIndex(i);
             if (i != elements.length-1) {
                 this.nodes[i].setNext(this.nodes[i++]);
             }
@@ -44,7 +44,7 @@ public class LinkListS<T> {
             throw new IllegalArgumentException("The index is Error");
         }
         T old = this.nodes[idx].getElement();
-        this.nodes[idx].setElement(ele);
+        this.nodes[idx] = new Node<T>(ele);
         return old;
     }
 
@@ -63,7 +63,7 @@ public class LinkListS<T> {
         for (int i=this.size; i > idx; i--) {
             this.nodes[i] = this.nodes[i--];
         }
-        this.nodes[idx].setElement(ele);
+        this.nodes[idx] = new Node<T>(ele);
         this.size++;
     }
 
@@ -85,7 +85,7 @@ public class LinkListS<T> {
         Node<T>[] olds = this.nodes;
         this.nodes = new Node[newCapacity];
         for (int i = 0; i < olds.length; i++) {
-            this.nodes[i].setElement(olds[i].getElement());
+            this.nodes[i] = new Node<T>(olds[i].getElement());
         }
     }
 
