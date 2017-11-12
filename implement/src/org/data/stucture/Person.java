@@ -42,4 +42,15 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Person) {
+            Person that = (Person) obj;
+            if (this.name.equals(that.getName()) && this.age == that.getAge()) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
