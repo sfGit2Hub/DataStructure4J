@@ -31,6 +31,30 @@ public class AVLTree<T extends Comparable> {
         return node == null ? -1 : node.height;
     }
 
+    public T insert(T ele) {
+        return insert(ele, root).element;
+    }
+
+    public T remove(T ele) {
+        return remove(ele, root).element;
+    }
+
+    private AVLTreeNode<T> remove(T ele, AVLTreeNode<T> node) {
+        if (node == null) {
+            return node;
+        }
+        int compareResult = ele.compareTo(node.element);
+
+        if (compareResult < 0) {
+            node.left = remove(ele, node.left);
+        } else if (compareResult > 0) {
+            node.right = remove(ele, node.right);
+        } else {
+            node = (node.left != null) ? node.left : node.right;
+        }
+        return balance(node);
+    }
+
     /**
      * 插入子树
      * @param ele
