@@ -74,7 +74,7 @@ public class RBTree<T extends Comparable<T>> {
             node.color = color;
     }
 
-    /*
+    /**
      * 前序遍历"红黑树"
      */
     private void preOrder(RBTNode<T> tree) {
@@ -89,7 +89,7 @@ public class RBTree<T extends Comparable<T>> {
         preOrder(mRoot);
     }
 
-    /*
+    /**
      * 中序遍历"红黑树"
      */
     private void inOrder(RBTNode<T> tree) {
@@ -105,7 +105,7 @@ public class RBTree<T extends Comparable<T>> {
     }
 
 
-    /*
+    /**
      * 后序遍历"红黑树"
      */
     private void postOrder(RBTNode<T> tree) {
@@ -121,7 +121,7 @@ public class RBTree<T extends Comparable<T>> {
     }
 
 
-    /*
+    /**
      * (递归实现)查找"红黑树x"中键值为key的节点
      */
     private RBTNode<T> search(RBTNode<T> x, T key) {
@@ -141,7 +141,7 @@ public class RBTree<T extends Comparable<T>> {
         return search(mRoot, key);
     }
 
-    /*
+    /**
      * (非递归实现)查找"红黑树x"中键值为key的节点
      */
     private RBTNode<T> iterativeSearch(RBTNode<T> x, T key) {
@@ -163,7 +163,7 @@ public class RBTree<T extends Comparable<T>> {
         return iterativeSearch(mRoot, key);
     }
 
-    /* 
+    /**
      * 查找最小结点：返回tree为根结点的红黑树的最小结点。
      */
     private RBTNode<T> minimum(RBTNode<T> tree) {
@@ -183,7 +183,7 @@ public class RBTree<T extends Comparable<T>> {
         return null;
     }
 
-    /* 
+    /**
      * 查找最大结点：返回tree为根结点的红黑树的最大结点。
      */
     private RBTNode<T> maximum(RBTNode<T> tree) {
@@ -203,7 +203,7 @@ public class RBTree<T extends Comparable<T>> {
         return null;
     }
 
-    /* 
+    /**
      * 找结点(x)的后继结点。即，查找"红黑树中数据值大于该结点"的"最小结点"。
      */
     public RBTNode<T> successor(RBTNode<T> x) {
@@ -223,7 +223,7 @@ public class RBTree<T extends Comparable<T>> {
         return y;
     }
 
-    /* 
+    /**
      * 找结点(x)的前驱结点。即，查找"红黑树中数据值小于该结点"的"最大结点"。
      */
     public RBTNode<T> predecessor(RBTNode<T> x) {
@@ -243,7 +243,7 @@ public class RBTree<T extends Comparable<T>> {
         return y;
     }
 
-    /* 
+    /**
      * 对红黑树的节点(x)进行左旋转
      *
      * 左旋示意图(对节点x进行左旋)：
@@ -285,7 +285,7 @@ public class RBTree<T extends Comparable<T>> {
         x.parent = y;
     }
 
-    /* 
+    /**
      * 对红黑树的节点(y)进行右旋转
      *
      * 右旋示意图(对节点y进行左旋)：
@@ -327,7 +327,7 @@ public class RBTree<T extends Comparable<T>> {
         y.parent = x;
     }
 
-    /*
+    /**
      * 红黑树插入修正函数
      *
      * 在向红黑树中插入节点之后(失去平衡)，再调用该函数；
@@ -399,7 +399,7 @@ public class RBTree<T extends Comparable<T>> {
         setBlack(this.mRoot);
     }
 
-    /* 
+    /**
      * 将结点插入到红黑树中
      *
      * 参数说明：
@@ -453,7 +453,7 @@ public class RBTree<T extends Comparable<T>> {
     }
 
 
-    /*
+    /**
      * 红黑树删除修正函数
      *
      * 在从红黑树中删除插入节点之后(红黑树失去平衡)，再调用该函数；
@@ -541,7 +541,7 @@ public class RBTree<T extends Comparable<T>> {
             setBlack(node);
     }
 
-    /* 
+    /**
      * 删除结点(node)，并返回被删除的结点
      *
      * 参数说明：
@@ -633,7 +633,7 @@ public class RBTree<T extends Comparable<T>> {
         node = null;
     }
 
-    /* 
+    /**
      * 删除结点(z)，并返回被删除的结点
      *
      * 参数说明：
@@ -647,7 +647,7 @@ public class RBTree<T extends Comparable<T>> {
             remove(node);
     }
 
-    /*
+    /**
      * 销毁红黑树
      */
     private void destroy(RBTNode<T> tree) {
@@ -667,7 +667,7 @@ public class RBTree<T extends Comparable<T>> {
         mRoot = null;
     }
 
-    /*
+    /**
      * 打印"红黑树"
      *
      * key        -- 节点的键值 
