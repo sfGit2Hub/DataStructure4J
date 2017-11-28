@@ -32,7 +32,8 @@ public class AVLTree<T extends Comparable> {
     }
 
     public T insert(T ele) {
-        return insert(ele, root).element;
+        root =  insert(ele, root);
+        return root.element;
     }
 
     public T remove(T ele) {
@@ -55,6 +56,26 @@ public class AVLTree<T extends Comparable> {
         return balance(node);
     }
 
+    public boolean isEmpty(){
+        return root == null;
+    }
+
+    public void printTree() {
+        if (isEmpty()) {
+            System.out.println("Empty tree");
+        } else {
+            printTree(root);
+        }
+    }
+
+    private void printTree(AVLTreeNode<T> node) {
+        if (node != null) {
+            printTree(node.left);
+            System.out.println(node.element);
+            printTree(node.right);
+        }
+    }
+
     /**
      * 插入子树
      * @param ele
@@ -69,9 +90,9 @@ public class AVLTree<T extends Comparable> {
         int compareResult = ele.compareTo(node.element);
 
         if (compareResult < 0) {
-            node.left = insert(ele, node);
+            node.left = insert(ele, node.left);
         } else if (compareResult > 0) {
-            node.right = insert(ele, node);
+            node.right = insert(ele, node.right);
         } else {
             // TODO
 //            暂时不存储重复数据
@@ -88,7 +109,7 @@ public class AVLTree<T extends Comparable> {
             else
                 node = doubleWithLeftChild(node);
         } else if (height(node.right) - height(node.left) > ALLOWED_IMBALANCE) {
-            if (height(node.right.right) > height(node.right.left)) {
+            if (height(node.right.right) >= height(node.right.left)) {
                 node = rotateWithRightChild(node);
             } else {
                 node = doubleWithRightChild(node);

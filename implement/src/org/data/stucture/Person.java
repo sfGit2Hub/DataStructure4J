@@ -3,7 +3,7 @@ package org.data.stucture;
 /**
  * Created by Administrator on 2017/11/5.
  */
-public class Person {
+public class Person implements Comparable{
     private String name;
     private int age;
 
@@ -52,5 +52,14 @@ public class Person {
             }
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (o instanceof Person) {
+            Person that = (Person) o;
+            return this.getAge() - that.getAge();
+        }
+        return -1;
     }
 }
