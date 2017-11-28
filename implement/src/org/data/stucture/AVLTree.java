@@ -68,6 +68,10 @@ public class AVLTree<T extends Comparable> {
         }
     }
 
+    /**
+     * 中序遍历
+     * @param node
+     */
     private void printTree(AVLTreeNode<T> node) {
         if (node != null) {
             printTree(node.left);
