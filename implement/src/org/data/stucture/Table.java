@@ -9,7 +9,7 @@ import java.util.ListIterator;
  * Created by SF on 2017/10/21.
  */
 public class Table<T> implements List {
-    private Node<T>[] elements;
+//    private Node<T>[] elements;
 
     @Override
     public int size() {
