@@ -28,7 +28,7 @@ public class LengthOfLongestSubstringSolution {
         CharsWindow charIndex = new CharsWindow();
         int maxLength = 0, startIndex = 0;
         for (int i = 0; i < str.length(); i++) {
-            Character current = str.charAt(i);
+            char current = str.charAt(i);
             if (charIndex.contains(current)){
                 startIndex = Math.max(startIndex, charIndex.get(current));
             }
