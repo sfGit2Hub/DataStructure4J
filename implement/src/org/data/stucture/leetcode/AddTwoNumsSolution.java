@@ -8,6 +8,7 @@ public class AddTwoNumsSolution {
         if (num1 == null) {
             return num2;
         }
+
         if (num2 == null) {
             return num1;
         }
