@@ -52,6 +52,9 @@ public class 整数反转 {
         System.out.println("x=" + x + "-revert:" + revert(x));
         x = -123;
         System.out.println("x=" + x + "-revert:" + revert(x));
+
+        x = 0;
+        System.out.println("x=" + x + "-revert:" + revert(x));
     }
 
     public static int revert(int x){
@@ -59,13 +62,12 @@ public class 整数反转 {
             return 0;
         }
 
-        byte[] resultArrays = new byte[4];
-        resultArrays[0] = (byte) (x < 0 ? -1 : 1);
-        x = Math.abs(x);
-        resultArrays[1] = (byte) (x % 10);
-        resultArrays[2] = (byte) ((x / 10) % 10);
-        resultArrays[3] = (byte) ((x / 100) % 10);
-
-        return resultArrays[0] * (resultArrays[1] * 100 + resultArrays[2] * 10 + resultArrays[3]);
+        int rev = Math.abs(x), result = 0;
+        while (rev > 0){
+            int cur = rev % 10;
+            rev = rev / 10;
+            result = result * 10 + cur;
+        }
+        return x < 0 ? -result : result;
     }
 }
