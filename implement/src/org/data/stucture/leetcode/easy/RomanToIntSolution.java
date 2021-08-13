@@ -1,4 +1,4 @@
-package org.data.stucture.leetcode;
+package org.data.stucture.leetcode.easy;
 
 public class RomanToIntSolution {
     public static RomanToIntSolution Instance = new RomanToIntSolution();

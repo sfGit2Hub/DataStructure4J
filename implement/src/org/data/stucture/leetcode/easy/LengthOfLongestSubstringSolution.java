@@ -1,8 +1,6 @@
-package org.data.stucture.leetcode;
+package org.data.stucture.leetcode.easy;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 无重复字符的最长子串

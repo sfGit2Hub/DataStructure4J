@@ -1,4 +1,4 @@
-package org.data.stucture.leetcode;
+package org.data.stucture.leetcode.easy;
 
 import javafx.util.Pair;
 

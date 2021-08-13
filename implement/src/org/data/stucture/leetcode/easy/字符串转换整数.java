@@ -1,8 +1,4 @@
-package org.data.stucture.leetcode;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+package org.data.stucture.leetcode.easy;
 
 /**
  * 首先，该函数会根据需要丢弃无用的开头空格字符，直到寻找到第一个非空格的字符为止。

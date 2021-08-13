@@ -1,4 +1,4 @@
-package org.data.stucture.leetcode;
+package org.data.stucture.leetcode.easy;
 
 /**
  * 输入: ["flower","flow","flight"]
